@@ -5,15 +5,19 @@ document.getElementById('generateRandom').addEventListener('click', () => {
 
 let points = 0;
 let status;
+let name;
 
 function randomCharacter() {
     fetch(`https://rickandmortyapi.com/api/character/${Math.floor(Math.random() * 826)}`)
         .then((response)=>response.json())
         .then((data => {
             console.log(data);
-            document.getElementById('image').src = data.image;
+            name = data.name;
+            console.log(name);
             status = data.status;
             console.log(status);
+            document.getElementById('image').src = data.image;
+            document.getElementById('name').innerHTML = name;
         }))
 }
 

@@ -17,7 +17,7 @@ function randomCharacter() {
             status = data.status;
             console.log(status);
             document.getElementById('image').src = data.image;
-            document.getElementById('name').innerHTML = name;
+            document.getElementById('name').innerText = name;
         }))
 }
 

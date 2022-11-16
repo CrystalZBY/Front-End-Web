@@ -1,14 +1,27 @@
+randomStory();
+    document.getElementById('generateRandom').addEventListener('click', () => {
+        randomStories();
+})
+
+function randomStory(){
+    fetch("https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=yourkey")
+        .then((response) => response.json())
+        .then(data =>{
+            
+        })
+}
+
 var app = {
     nyTimes: [],
   
     initialize: function () {
       app.getNYTimesData();
     },
-  
+
     makeHTML: function () {
       var theHTML = '';
       for (var i = 0; i < app.nyTimes.length; i++) {
-        theHTML += "<div class='nytArticle'>";
+        theHTML += "<div class='nytStories'>";
         theHTML += '<h3>' + app.nyTimes[i].headline.main + '</h3>';
         theHTML += '</div>';
       }
@@ -19,10 +32,10 @@ var app = {
       console.log('Get NY Times Data');
       var currentSearchWord = 'biden';
       var nyTimesURL =
-        'http://api.nytimes.com/svc/search/v2/articlesearch.json?q=' +
+        'https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=yourkey' +
         currentSearchWord +
         '&page=0&sort=newest&api-key=';
-      var myNYKey = 'E0Jowl0MxvI4RRWnjChL1eFDPwhbj3EE';
+      var myNYKey = 'daAWQ5ySKaPXFeKGzY5wbvEY9DCVp2i2';
       var nyTimesReqURL = nyTimesURL + myNYKey;
       console.log(nyTimesReqURL);
       fetch(nyTimesReqURL)

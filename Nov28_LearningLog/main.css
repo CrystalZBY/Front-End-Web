@@ -1,0 +1,28 @@
+body{
+    position: relative;
+    background-color: white;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+}
+
+.page-1{
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+}
+
+.home{
+    position: relative;
+    margin: 10px;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+}
+
+h1{
+    position: relative;
+    text-align: center;
+}
